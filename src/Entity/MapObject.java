@@ -1,8 +1,8 @@
 package Entity;
 
+import java.awt.Rectangle;
 import TileMap.Tile;
 import TileMap.TileMap;
-import java.awt.Rectangle;
 import lastlong.GamePanel;
 
 public abstract class MapObject {
