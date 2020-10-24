@@ -35,7 +35,7 @@ public class MenuState extends GameState {
         menuMusic.playLoop();
         try
         {
-            bg = new Background("/Resources/Backgrounds/BG.png", 1);
+            bg = new Background("/Resources/Backgrounds/menu.png", 1);
             
             
             titleColor = new Color(128, 0, 0);

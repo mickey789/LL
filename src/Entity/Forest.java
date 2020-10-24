@@ -33,8 +33,8 @@ public class Forest {
 //        B8 = new Background("/Resources/State/08_Forest.png",1);
 //        B9 = new Background("/Resources/State/09_Forest.png",1);
 //        B10 = new Background("/Resources/State/10_Sky.png",1);
-        Test = new Background("/Resources/State/TestPosition.png", 1);
-        Test.setPosition(0, -250);
+        Test = new Background("/Resources/Backgrounds/stageTuto.png", 1);
+        Test.setPosition(0,0);
         
         
     }

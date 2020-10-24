@@ -30,7 +30,7 @@ public class FirstState extends GameState {
         tileMap.loadMap("/Resources/Maps/FirstState.map");
         tileMap.setPosition(0, 0);
         player = new Player(tileMap);
-        player.setPosition(100,200);
+        player.setPosition(100,600);
         
     }
     
@@ -52,6 +52,12 @@ public class FirstState extends GameState {
     public void keyPressed(int k){
         if(k == KeyEvent.VK_LEFT) player.setLeft(true);
 	if(k == KeyEvent.VK_RIGHT) player.setRight(true);
+        if(k == KeyEvent.VK_ESCAPE){
+            gsm.setCurrentState(GameStateManager.MENUSTATE);
+        }
+        if(k == KeyEvent.VK_ENTER){
+            gsm.setCurrentState(GameStateManager.STATE2);
+        }
     }
     
     

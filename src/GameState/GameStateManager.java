@@ -11,6 +11,7 @@ public class GameStateManager {
     public static final int MENUSTATE = 1;
     public static final int OPENINGSTATE = 2; 
     public static final int FIRSTSTATE = 3; 
+    public static final int STATE2 = 5;
     
     public GameStateManager()
     {
@@ -36,6 +37,9 @@ public class GameStateManager {
 		}
                 else if(i == FIRSTSTATE) {
 			gameStates[i] = new FirstState(this);
+			gameStates[i].update();
+		}else if(i == STATE2) {
+			gameStates[i] = new State2(this);
 			gameStates[i].update();
 		}
 	}

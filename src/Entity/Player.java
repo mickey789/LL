@@ -10,7 +10,7 @@ public class Player extends MapObject{
         
     //animation
     private ArrayList<BufferedImage[]> sprites;
-    private final int[] numFrames = { 2, 8};
+    private final int[] numFrames = { 1, 7};
     
     //animation actions
     private static final int IDLE = 0;
@@ -19,10 +19,10 @@ public class Player extends MapObject{
     public Player(TileMap tm){
         super(tm);
         
-        width = 30;
-        height = 30;
-        cwidth = 20;
-        cheight = 20;
+        width = 125;
+        height = 278;
+        //cwidth = 20;
+        //cheight = 20;
         
         moveSpeed = 0.3;
         
@@ -30,7 +30,7 @@ public class Player extends MapObject{
         
         //load Sprites
         try{
-            BufferedImage spritesheet = ImageIO.read(getClass().getResourceAsStream("/Resources/Sprites/Test.gif"));
+            BufferedImage spritesheet = ImageIO.read(getClass().getResourceAsStream("/Resources/Sprites/player.png"));
             
             sprites = new ArrayList<BufferedImage[]>();
             
@@ -40,8 +40,7 @@ public class Player extends MapObject{
                     bi[j] = spritesheet.getSubimage(j * width, i * height, width, height);
                 }
                  sprites.add(bi);
-            }
-           
+            }  
         }
         catch(Exception e){
             e.printStackTrace();
@@ -57,20 +56,20 @@ public class Player extends MapObject{
         
         //movement
         if(left){
-            x -= 5;
+           dx -= 0.3;
         }
         else if(right){
-            x += 5;
+            dx += 0.3;
         }
         else{
-            if(x > 0){
-                if(x < 0){
-                    x = 0;
-                }
-            }else if(x < 0){
-                if(x > 0){
-                    x = 0;
-                }
+            if(dx > 0){
+               
+                    dx = 0;
+               
+            }else if(dx < 0){
+                
+                    dx = 0;
+                
             }
         }
     }
@@ -86,7 +85,7 @@ public class Player extends MapObject{
                 currentAction = WALKING;
                 animation.setFrames(sprites.get(WALKING));
                 animation.setDelay(40);
-                width = 30;
+                width = 125;
             }
         }
         else{
@@ -94,16 +93,16 @@ public class Player extends MapObject{
                 currentAction = IDLE;
                 animation.setFrames(sprites.get(IDLE));
                 animation.setDelay(400);
-                width = 30;
+                width = 125;
             }
         }
         
         animation.update();
         
-        if(right){
+        if(left){
             facingRight = true;
         }
-        if(left){
+        if(right){
             facingRight = false;
         }
     }

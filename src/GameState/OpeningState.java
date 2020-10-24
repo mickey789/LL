@@ -52,7 +52,7 @@ public class OpeningState extends GameState{
     
     
     public void keyPressed(int k){
-        if(k == KeyEvent.VK_ENTER){
+        if(k == KeyEvent.VK_SPACE){
             gsm.setCurrentState(GameStateManager.FIRSTSTATE);
         }
     }
