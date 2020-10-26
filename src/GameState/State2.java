@@ -5,7 +5,7 @@ import Entity.*;
 import TileMap.TileMap;
 import java.awt.event.KeyEvent;
 import lastlong.GamePanel;
-
+import GameState.FirstState;
 
 
 public class State2 extends GameState {
@@ -56,7 +56,7 @@ public class State2 extends GameState {
             gsm.setCurrentState(GameStateManager.MENUSTATE);
         }
         if(k == KeyEvent.VK_ENTER){
-            gsm.setCurrentState(GameStateManager.STATE2);
+            gsm.setCurrentState(GameStateManager.STATE3);
         }
     }
     

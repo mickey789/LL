@@ -18,28 +18,32 @@ public class Forest {
     private Background B8;
     private Background B9;
     private Background B10;
-    private Background Test;
+    private Background B11;
+    private Background B12;
+
 
     
     public void Forest(){
         
-//        B1 = new Background("/Resources/State/01_Mist.png",1);
-//        B2 = new Background("/Resources/State/02_Bushes.png",1);
-//        B3 = new Background("/Resources/State/03_Particles.png",1);
-//        B4 = new Background("/Resources/State/04_Forest.png",1);
-//        B5 = new Background("/Resources/State/05_Particles.png",1);
-//        B6 = new Background("/Resources/State/06_Forest.png",1);
-//        B7 = new Background("/Resources/State/07_Forest.png",1);
-//        B8 = new Background("/Resources/State/08_Forest.png",1);
-//        B9 = new Background("/Resources/State/09_Forest.png",1);
-//        B10 = new Background("/Resources/State/10_Sky.png",1);
-        Test = new Background("/Resources/Backgrounds/stageTuto.png", 1);
-        Test.setPosition(0,0);
+        B1 = new Background("/Resources/Backgrounds/stage1,2,5,7,8,11.png", 1);
+//        B2 = new Background("/Resources/Backgrounds/stage1,2,5,7,8,11.png",1);
+//        B3 = new Background("/Resources/Backgrounds/stage3,9.png",1);
+//        B4 = new Background("/Resources/Backgrounds/stage4.png",1);
+//        B5 = new Background("/Resources/Backgrounds/stage1,2,5,7,8,11.png",1);
+//        B6 = new Background("/Resources/Backgrounds/stage6.png",1);
+//        B7 = new Background("/Resources/Backgrounds/stage1,2,5,7,8,11.png",1);
+//        B8 = new Background("/Resources/Backgrounds/stage1,2,5,7,8,11.png",1);
+//        B9 = new Background("/Resources/Backgrounds/stage3,9.png",1);
+//        B10 = new Background("/Resources/Backgrounds/stage10.png",1);
+//        B11 = new Background("/Resources/Backgrounds/stage1,2,5,7,8,11.png", 1);
+        B1.setPosition(0,0);
         
         
     }
     
     public void update(){
+//        B12.update();
+//        B11.update();
 //        B10.update();
 //        B9.update();
 //        B8.update();
@@ -49,12 +53,13 @@ public class Forest {
 //        B4.update();
 //        B3.update();
 //        B2.update();
-//        B1.update();
-        Test.update();
+        B1.update();
+
     }
     
     public void draw(Graphics2D g){
-        
+//        B12.draw(g);
+//        B11.draw(g);
 //        B10.draw(g);
 //        B9.draw(g);
 //        B8.draw(g);
@@ -64,7 +69,7 @@ public class Forest {
 //        B4.draw(g);
 //        B3.draw(g);
 //        B2.draw(g);
-//        B1.draw(g);
-        Test.draw(g);
+        B1.draw(g);
+
     }
 }

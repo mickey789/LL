@@ -10,7 +10,7 @@ public class Player extends MapObject{
         
     //animation
     private ArrayList<BufferedImage[]> sprites;
-    private final int[] numFrames = { 1, 7};
+    private final int[] numFrames = { 1, 6};
     
     //animation actions
     private static final int IDLE = 0;
@@ -56,11 +56,11 @@ public class Player extends MapObject{
         
         //movement
         if(left){
-           dx -= 0.3;
-        }
+                dx -= 0.3;
+            }
         else if(right){
-            dx += 0.3;
-        }
+                dx += 0.3;
+            }
         else{
             if(dx > 0){
                
@@ -71,7 +71,7 @@ public class Player extends MapObject{
                     dx = 0;
                 
             }
-        }
+        }    
     }
     
     public void update(){
@@ -84,7 +84,7 @@ public class Player extends MapObject{
             if(currentAction != WALKING){
                 currentAction = WALKING;
                 animation.setFrames(sprites.get(WALKING));
-                animation.setDelay(40);
+                animation.setDelay(100);
                 width = 125;
             }
         }
@@ -99,10 +99,10 @@ public class Player extends MapObject{
         
         animation.update();
         
-        if(left){
+        if(right){
             facingRight = true;
         }
-        if(right){
+        if(left){
             facingRight = false;
         }
     }
