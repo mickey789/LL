@@ -56,10 +56,12 @@ public class Player extends MapObject{
         
         //movement
         if(left){
-                dx -= 0.3;
+                dx = 0;
+                dx -= 3;
             }
         else if(right){
-                dx += 0.3;
+                dx = 0;
+                dx += 3;
             }
         else{
             if(dx > 0){

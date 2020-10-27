@@ -70,10 +70,10 @@ public class MenuState extends GameState {
         for(int i = 0; i < options.length; i++)
         {
             if(i == currentChoice){
-                g.setColor(Color.GRAY);
+                g.setColor(Color.RED);
             }
             else{
-                g.setColor(Color.RED);
+                g.setColor(Color.WHITE);
             }
             g.drawString(options[i], 450, 400 + i * 60);
         }

@@ -6,6 +6,9 @@ public class GameStateManager {
     private int currentState;
     private int previousState;
     
+//    public Door[] Door;
+    private int currentDoor;
+    
     public static final int NUM_STATES = 15;
     public static final int INTROSTATE = 0; 
     public static final int MENUSTATE = 1;
@@ -29,7 +32,18 @@ public class GameStateManager {
     {
         gameStates = new GameState[NUM_STATES];
         setCurrentState(INTROSTATE);  
+        
+//        Door = new Door[]
     }
+//    
+//    public void setCurrentDoor(int i){
+//        currentDoor = i;
+//        if(i == INTROSTATE){
+//            currentDoor[i] = new currentDoor(this);
+//        }
+//        
+//        
+//    }
     
     public void setCurrentState(int i) {
 		previousState = currentState;
@@ -95,6 +109,8 @@ public class GameStateManager {
         if(gameStates[currentState] != null) {
             gameStates[currentState].update();
 	}
+        
+        
     }
     
     public void draw(java.awt.Graphics2D g)

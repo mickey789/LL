@@ -6,12 +6,13 @@ import TileMap.TileMap;
 import java.awt.event.KeyEvent;
 import lastlong.GamePanel;
 import GameState.State6;
+import TileMap.Background;
 
 
 public class State7 extends GameState {
 
     private TileMap tileMap;
-    private Forest forest = new Forest();
+    private Background B4;
     private Player player;
     
     //private MouseManager mouseManager;
@@ -24,7 +25,8 @@ public class State7 extends GameState {
     
     
     public void init(){
-        forest.Forest();
+        B4 = new Background("/Resources/Backgrounds/stage6.png",1);
+        B4.setPosition(0,0);
         tileMap = new TileMap(30);
         tileMap.loadTiles("/Resources/Tilesets/grasstileset.gif");
         tileMap.loadMap("/Resources/Maps/FirstState.map");
@@ -35,7 +37,7 @@ public class State7 extends GameState {
     }
     
     public void update(){
-        forest.update();
+        B4.update();
         player.update();
 
     }
@@ -43,7 +45,7 @@ public class State7 extends GameState {
     public void draw(Graphics2D g){
 //        g.setColor(Color.RED);
 //        g.fillRect(0, 0, GamePanel.WIDTH, GamePanel.HEIGHT);
-        forest.draw(g);
+        B4.draw(g);
         tileMap.draw(g);
         player.draw(g);
         

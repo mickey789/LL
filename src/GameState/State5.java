@@ -6,12 +6,13 @@ import TileMap.TileMap;
 import java.awt.event.KeyEvent;
 import lastlong.GamePanel;
 import GameState.State4;
+import TileMap.Background;
 
 
 public class State5 extends GameState {
 
     private TileMap tileMap;
-    private Forest forest = new Forest();
+    private Background B3;
     private Player player;
     
     //private MouseManager mouseManager;
@@ -24,7 +25,8 @@ public class State5 extends GameState {
     
     
     public void init(){
-        forest.Forest();
+        B3 = new Background("/Resources/Backgrounds/stage_4.png",1);
+        B3.setPosition(0,0);
         tileMap = new TileMap(30);
         tileMap.loadTiles("/Resources/Tilesets/grasstileset.gif");
         tileMap.loadMap("/Resources/Maps/FirstState.map");
@@ -35,7 +37,7 @@ public class State5 extends GameState {
     }
     
     public void update(){
-        forest.update();
+        B3.update();
         player.update();
 
     }
@@ -43,7 +45,7 @@ public class State5 extends GameState {
     public void draw(Graphics2D g){
 //        g.setColor(Color.RED);
 //        g.fillRect(0, 0, GamePanel.WIDTH, GamePanel.HEIGHT);
-        forest.draw(g);
+        B3.draw(g);
         tileMap.draw(g);
         player.draw(g);
         
@@ -55,8 +57,11 @@ public class State5 extends GameState {
         if(k == KeyEvent.VK_ESCAPE){
             gsm.setCurrentState(GameStateManager.MENUSTATE);
         }
-        if(k == KeyEvent.VK_ENTER){
+        
+        if(player.x > 283 && player.x <373){
+            if(k == KeyEvent.VK_ENTER){
             gsm.setCurrentState(GameStateManager.STATE6);
+            }
         }
     }
     

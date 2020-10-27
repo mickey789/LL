@@ -6,13 +6,16 @@ import TileMap.TileMap;
 import java.awt.event.KeyEvent;
 import lastlong.GamePanel;
 import GameState.FirstState;
-
+import TileMap.Background;
+import GameState.State8;
+import GameState.GameStateManager;
 
 public class State2 extends GameState {
 
     private TileMap tileMap;
-    private Forest forest = new Forest();
+    private Background B1;
     private Player player;
+    GameStateManager currentDoor ;
     
     //private MouseManager mouseManager;
 
@@ -20,22 +23,37 @@ public class State2 extends GameState {
         this.gsm = gsm;
         //mouseManager = new MouseManager();
         init();
+        
     }
     
     
     public void init(){
-        forest.Forest();
+        B1 = new Background("/Resources/Backgrounds/stage_1,2,5,7,8,11.png", 1);
+        B1.setPosition(0,0);
         tileMap = new TileMap(30);
         tileMap.loadTiles("/Resources/Tilesets/grasstileset.gif");
         tileMap.loadMap("/Resources/Maps/FirstState.map");
         tileMap.setPosition(0, 0);
         player = new Player(tileMap);
         player.setPosition(100,600);
+ 
+        System.out.println(currentDoor);
+        
+//        if(currentDoor = 0){
+//
+//            player.setPosition(275,600);
+//        }
+//        else if(currentDoor = 1){
+//            
+//            player.setPosition(775,600);
+//        }
         
     }
     
+    
+    
     public void update(){
-        forest.update();
+        B1.update();
         player.update();
 
     }
@@ -43,7 +61,7 @@ public class State2 extends GameState {
     public void draw(Graphics2D g){
 //        g.setColor(Color.RED);
 //        g.fillRect(0, 0, GamePanel.WIDTH, GamePanel.HEIGHT);
-        forest.draw(g);
+        B1.draw(g);
         tileMap.draw(g);
         player.draw(g);
         
@@ -55,8 +73,22 @@ public class State2 extends GameState {
         if(k == KeyEvent.VK_ESCAPE){
             gsm.setCurrentState(GameStateManager.MENUSTATE);
         }
-        if(k == KeyEvent.VK_ENTER){
+        
+        if(player.x > 244 && player.x <316){
+            if(k == KeyEvent.VK_ENTER){
+                
+//            gsm.setCurrentDoor(GameStateManager.INTROSTATE);
             gsm.setCurrentState(GameStateManager.STATE3);
+            
+            }
+        }
+        if(player.x > 730 && player.x <805){
+            if(k == KeyEvent.VK_ENTER){
+                
+//            gsm.setCurrentDoor(GameStateManager.MENUSTATE);
+            gsm.setCurrentState(GameStateManager.STATE3);
+            
+            }
         }
     }
     

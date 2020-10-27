@@ -14,7 +14,7 @@ public abstract class MapObject {
     protected double ymap;
     
     //position and vector
-    protected double x;
+    public double x;
     protected double y;
     protected double dx;
     protected double dy;

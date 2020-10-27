@@ -93,14 +93,14 @@ public class TileMap {
 //            ymax = 0;
             
             String delims = "\\s+";
-            for(int row = 0; row < numRows; row++)
-            {
-                String line = br.readLine();
-                String[] tokens = line.split(delims);
-                for(int col = 0; col < numCols; col++){
-                    map[row][col] = Integer.parseInt(tokens[col]);
-                }
-            }
+//            for(int row = 0; row < numRows; row++)
+//            {
+//                String line = br.readLine();
+//                String[] tokens = line.split(delims);
+//                for(int col = 0; col < numCols; col++){
+//                    map[row][col] = Integer.parseInt(tokens[col]);
+//                }
+//            }
         }
         catch(Exception e)
         {
