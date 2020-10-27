@@ -56,24 +56,22 @@ public class Player extends MapObject{
         
         //movement
         if(left){
-                dx = 0;
-                dx -= 3;
+                
+                x -= 3;
             }
         else if(right){
-                dx = 0;
-                dx += 3;
-            }
-        else{
-            if(dx > 0){
+        
+                x += 3;
+        }
+        if(x > 1000){
                
-                    dx = 0;
-               
-            }else if(dx < 0){
-                
-                    dx = 0;
-                
-            }
+                    x = 1000;
         }    
+        if(x < 0){
+                
+                    x = 0;
+                
+            }    
     }
     
     public void update(){

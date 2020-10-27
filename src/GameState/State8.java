@@ -15,7 +15,7 @@ public class State8 extends GameState {
     private TileMap tileMap;
     private Background B1;
     private Player player;
-    GameStateManager currentDoor ;
+    
     //private MouseManager mouseManager;
 
     public State8(GameStateManager gsm){
@@ -34,17 +34,13 @@ public class State8 extends GameState {
         tileMap.loadMap("/Resources/Maps/FirstState.map");
         tileMap.setPosition(0, 0);
         player = new Player(tileMap);
-        player.setPosition(100,600);
-        System.out.println(currentDoor);
+        if(door2 == 1){player.setPosition(275,600);door2 = 0;}
+        else if(door1 == 1){player.setPosition(775,600);door1 = 0;}
+        else if(door4 == 1){player.setPosition(950,600);door4 = 0;}
         
-//        if(currentDoor = 0){
-//
-//            player.setPosition(275,600);
-//        }
-//        else if(currentDoor = 1){
-//            
-//            player.setPosition(775,600);
-//        }
+        
+//        System.out.println(player.showWin());
+        
         
     }
    
@@ -70,17 +66,24 @@ public class State8 extends GameState {
         if(k == KeyEvent.VK_ESCAPE){
             gsm.setCurrentState(GameStateManager.MENUSTATE);
         }
-        if(player.x > 244 && player.x <316){
+        if(player.x > 240 && player.x <316){
             if(k == KeyEvent.VK_ENTER){
-            
-            gsm.setCurrentState(GameStateManager.STATE9);
+            checkDoor1(1);
+            gsm.setCurrentState(GameStateManager.STATE2);
             
             }
         }
         if(player.x > 730 && player.x <805){
             if(k == KeyEvent.VK_ENTER){
+            checkDoor2(1);
+            gsm.setCurrentState(GameStateManager.STATE2);
             
-            gsm.setCurrentState(GameStateManager.STATE9);
+            }
+        }
+        if(player.x > 950){
+            if(k == KeyEvent.VK_ENTER){
+            checkDoor3(1);
+            gsm.setCurrentState(GameStateManager.STATE7);
             
             }
         }
@@ -93,6 +96,5 @@ public class State8 extends GameState {
     }
     
     
-    
-          
+  
 }

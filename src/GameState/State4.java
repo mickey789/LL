@@ -32,7 +32,10 @@ public class State4 extends GameState {
         tileMap.loadMap("/Resources/Maps/FirstState.map");
         tileMap.setPosition(0, 0);
         player = new Player(tileMap);
-        player.setPosition(100,600);
+        if(door3 == 1){player.setPosition(150,600);door3 = 0;}
+        else if(door2 == 1){player.setPosition(570,600);door2 = 0;}
+        else if(door1 == 1){player.setPosition(850,600);door1 = 0;}
+        else if(door4 == 1){player.setPosition(950,600);door4 = 0;}
         
     }
     
@@ -60,16 +63,25 @@ public class State4 extends GameState {
         
         if(player.x > 103 && player.x < 199){
             if(k == KeyEvent.VK_ENTER){
-            gsm.setCurrentState(GameStateManager.STATE5);
+                checkDoor1(1);
+            gsm.setCurrentState(GameStateManager.STATE10);
             }
         }
         if(player.x > 520 && player.x <622){
             if(k == KeyEvent.VK_ENTER){
-            gsm.setCurrentState(GameStateManager.STATE5);
+                checkDoor2(1);
+            gsm.setCurrentState(GameStateManager.STATE10);
             }
         }
         if(player.x > 814 && player.x <904){
             if(k == KeyEvent.VK_ENTER){
+                checkDoor3(1);
+            gsm.setCurrentState(GameStateManager.STATE10);
+            }
+        }
+        if(player.x >950){
+            if(k == KeyEvent.VK_ENTER){
+                checkDoor2(1);
             gsm.setCurrentState(GameStateManager.STATE5);
             }
         }

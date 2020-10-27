@@ -32,12 +32,17 @@ public class FirstState extends GameState {
         B1 = new Background("/Resources/Backgrounds/stageTuto.png", 1);
         B1.setPosition(0,0);
         tileMap = new TileMap(30);
-        tileMap.loadTiles("/Resources/Tilesets/grasstileset.gif");
+        tileMap.loadTiles("/Resources/Tilesets/korb.png");
         tileMap.loadMap("/Resources/Maps/FirstState.map");
         tileMap.setPosition(0, 0);
         player = new Player(tileMap);
-        player.setPosition(100,600);
         
+        if(door1 == 1){player.setPosition(950,600);door1 = 0;}
+        else{player.setPosition(100,600);}
+        
+        System.out.println(door1);
+        System.out.println(door2);
+        System.out.println(door3);
         
    
     }
@@ -65,8 +70,9 @@ public class FirstState extends GameState {
         if(k == KeyEvent.VK_ESCAPE){
             gsm.setCurrentState(GameStateManager.MENUSTATE);
         }
-        if(player.x > 300 && player.x <400){
+        if(player.x >950){
             if(k == KeyEvent.VK_ENTER){
+                checkDoor3(1);
             gsm.setCurrentState(GameStateManager.STATE2);
         }
         }

@@ -7,6 +7,8 @@ import lastlong.GamePanel;
 
 public abstract class MapObject {
     
+    public static int win = 0;
+    public static int blockItem = 0;
     //tile stuff
     protected TileMap tileMap;
     protected int tileSize;
@@ -166,6 +168,8 @@ public abstract class MapObject {
     
     public void setLeft(boolean b) {left = b;}
     public void setRight(boolean b) {right = b;}
+    public void setWin(){win++;}
+    public int showWin(){return win;}
     
     public boolean notOnScreen(){
         return x + xmap + width < 0 || x + ymap - width > GamePanel.WIDTH || y + ymap + height < 0 || y + ymap - height > GamePanel.HEIGHT;

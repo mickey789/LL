@@ -93,14 +93,14 @@ public class TileMap {
 //            ymax = 0;
             
             String delims = "\\s+";
-//            for(int row = 0; row < numRows; row++)
-//            {
-//                String line = br.readLine();
-//                String[] tokens = line.split(delims);
-//                for(int col = 0; col < numCols; col++){
-//                    map[row][col] = Integer.parseInt(tokens[col]);
-//                }
-//            }
+            for(int row = 0; row < numRows; row++)
+            {
+                String line = br.readLine();
+                String[] tokens = line.split(delims);
+                for(int col = 0; col < numCols; col++){
+                    map[row][col] = Integer.parseInt(tokens[col]);
+                }
+            }
         }
         catch(Exception e)
         {
@@ -118,10 +118,11 @@ public class TileMap {
     public int getNumCols() { return numCols; }
     
     public int getType(int row, int col){
-        int rc = map[row][col];
-        int r = rc / numTilesAcross;
-        int c = rc % numTilesAcross;
-        return tiles[r][c].getType();
+//        int rc = map[row][col];
+//        int r = rc / numTilesAcross;
+//        int c = rc % numTilesAcross;
+//        return tiles[r][c].getType();
+          return 0;
     }
     
     public void setPosition(double x,double y){

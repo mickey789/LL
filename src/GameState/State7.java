@@ -32,7 +32,7 @@ public class State7 extends GameState {
         tileMap.loadMap("/Resources/Maps/FirstState.map");
         tileMap.setPosition(0, 0);
         player = new Player(tileMap);
-        player.setPosition(100,600);
+        if(door3 == 1){player.setPosition(0,600);door3 = 0;}
         
     }
     
@@ -57,8 +57,12 @@ public class State7 extends GameState {
         if(k == KeyEvent.VK_ESCAPE){
             gsm.setCurrentState(GameStateManager.MENUSTATE);
         }
-        if(k == KeyEvent.VK_ENTER){
+        if(player.x < 50){
+            if(k == KeyEvent.VK_ENTER){
+            checkDoor4(1);
             gsm.setCurrentState(GameStateManager.STATE8);
+            
+            }
         }
     }
     
