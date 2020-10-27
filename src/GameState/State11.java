@@ -32,7 +32,7 @@ public class State11 extends GameState {
         tileMap.loadMap("/Resources/Maps/FirstState.map");
         tileMap.setPosition(0, 0);
         player = new Player(tileMap);
-        if(door1 == 1){player.setPosition(330,600);door1 = 0;}
+        if(door1 == 1){player.setPosition(585,600);door1 = 0;}
         else if(door2 == 1){player.setPosition(950,600);door2 = 0;}
         
     }
@@ -66,10 +66,10 @@ public class State11 extends GameState {
             }
         }
         if(player.x >950){
-            if(k == KeyEvent.VK_ENTER){
+          
                 checkDoor5(1);
-            gsm.setCurrentState(GameStateManager.STATE9);
-            }
+            gsm.setCurrentState(GameStateManager.STATE10);
+            
         }
     }
     

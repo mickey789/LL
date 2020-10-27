@@ -62,13 +62,13 @@ public class State12 extends GameState {
         if(player.x > 244 && player.x <316){
             if(k == KeyEvent.VK_ENTER){
                 checkDoor1(1);
-            gsm.setCurrentState(GameStateManager.STATE10);
+            gsm.setCurrentState(GameStateManager.STATE6);
             }
         }
         if(player.x > 730 && player.x <805){
             if(k == KeyEvent.VK_ENTER){
                 checkDoor2(1);
-            gsm.setCurrentState(GameStateManager.STATE10);
+            gsm.setCurrentState(GameStateManager.STATE6);
             }
         }
     }

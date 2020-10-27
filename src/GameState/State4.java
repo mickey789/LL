@@ -80,10 +80,10 @@ public class State4 extends GameState {
             }
         }
         if(player.x >950){
-            if(k == KeyEvent.VK_ENTER){
+            
                 checkDoor2(1);
             gsm.setCurrentState(GameStateManager.STATE5);
-            }
+            
         }
     }
     

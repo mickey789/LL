@@ -34,7 +34,7 @@ public class State9 extends GameState {
         player = new Player(tileMap);
         if(door2 == 1){player.setPosition(275,600);door2 = 0;}
         else if(door1 == 1){player.setPosition(775,600);door1 = 0;}
-        else if(door5 == 1){player.setPosition(0,600);door5 = 0;}
+        else if(door5 == 1){player.setPosition(20,600);door5 = 0;}
         
         
     }
@@ -63,20 +63,20 @@ public class State9 extends GameState {
         if(player.x > 244 && player.x <316){
             if(k == KeyEvent.VK_ENTER){
                 checkDoor1(1);
-            gsm.setCurrentState(GameStateManager.STATE10);
+            gsm.setCurrentState(GameStateManager.STATE3);
             }
         }
         if(player.x > 730 && player.x <805){
             if(k == KeyEvent.VK_ENTER){
                 checkDoor2(1);
-            gsm.setCurrentState(GameStateManager.STATE10);
+            gsm.setCurrentState(GameStateManager.STATE3);
             }
         }
-        if(player.x <50){
-            if(k == KeyEvent.VK_ENTER){
+        if(player.x <20){
+            
                 checkDoor4(1);
             gsm.setCurrentState(GameStateManager.STATE10);
-            }
+            
         }
     }
     
